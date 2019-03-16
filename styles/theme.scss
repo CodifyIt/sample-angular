@@ -1,0 +1,123 @@
+// sass-lint:disable no-url-protocols
+// sass-lint:disable no-url-domains
+
+@import url('https://rsms.me/inter/inter-ui.css');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+$white: #fff;
+$box-shadow: rgb(30, 30, 30);
+$nav-bg-color: #1c2237;
+$main-bg-color: #f4f4f5;
+$body-color: #748aa1;
+$page-headings: #282d32;
+$h3-color: #31394d;
+$a-color: #4d5aff;
+$paper-box-shadow: rgba(30, 30, 30, .05);
+$card-date: rgba(116, 138, 161, .5);
+$card-description-color: #748aa1;
+$hr-border-color: #ebedf4;
+$user-input-border-color: #979797;
+$key-color: #53575b;
+
+html,
+body {
+  font-family: 'Inter UI', sans-serif;
+}
+
+header {
+  background: $white;
+  box-shadow: 0 -30px 40px 10px $box-shadow;
+}
+
+nav {
+  background-color: $nav-bg-color;
+}
+
+main {
+  background-color: $main-bg-color;
+}
+
+.create-container > main,
+.issue-details-container > main {
+  background: $white;
+}
+
+body {
+  color: $body-color;
+}
+
+h1,
+h2,
+label,
+.card-id,
+strong {
+  color: $page-headings;
+}
+
+h3 {
+  color: $h3-color;
+}
+
+a {
+  color: $a-color;
+}
+
+// sass-lint:disable force-attribute-nesting
+// sass-lint:disable no-qualifying-elements
+[class$='--active'],
+button[type='primary'] {
+  background-color: $a-color;
+  color: $white;
+}
+// sass-lint:enable no-qualifying-elements
+// sass-lint:enable force-attribute-nesting
+
+.paper {
+  background-color: $white;
+  box-shadow: -5px 5px 10px 0 $paper-box-shadow;
+}
+
+.card-date {
+  color: $card-date;
+}
+
+.card-description {
+  color: $card-description-color;
+}
+
+hr {
+  border: 1px solid $hr-border-color;
+}
+
+input,
+select,
+textarea,
+.attachment {
+  background-color: $white;
+  border: 1px solid $user-input-border-color;
+}
+
+h1 {
+  font-size: 1.7em;
+  font-weight: 600;
+}
+
+h2,
+h3 {
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
+.details-container {
+  .key {
+    color: $key-color;
+    opacity: .8;
+  }
+}

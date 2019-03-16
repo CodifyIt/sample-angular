@@ -1,0 +1,14 @@
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(2, auto);
+}
+
+p {
+  font-size: .8em;
+  grid-column: 1 / span 2;
+}
+
+.assignee > img {
+  width: 10%;
+}

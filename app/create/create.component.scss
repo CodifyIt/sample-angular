@@ -1,0 +1,30 @@
+main {
+  padding: 1em;
+}
+
+form {
+  display: grid;
+  grid-gap: 1.7em 7.5em;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 1em;
+}
+
+
+.title-container {
+  grid-column: 1 / -1;
+}
+
+.submit-section {
+  display: flex;
+  grid-column: 2 / -1;
+  justify-content: flex-end;
+}
+
+.title-text {
+  height: 4.5em;
+  padding: .625em 1.5em;
+}
+
+.attachment {
+  text-align: center;
+}

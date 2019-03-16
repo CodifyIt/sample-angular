@@ -1,0 +1,6 @@
+<h2>{{heading}}</h2>
+<hr />
+<div *ngFor="let kard of cards">
+  <app-issue-card-mini [showAssignee]="showAssignee" [issueData]="kard"></app-issue-card-mini>
+  <hr />
+</div>

@@ -1,0 +1,109 @@
+<div class="app-container issue-details-container" *ngIf="assigneeUsername()">
+  <app-nav></app-nav>
+  <main>
+    <h1>{{ issueDetail.title }}</h1>
+
+    <section class="options-section">
+      <button type="secondary" (click)="edit()">
+        Edit
+      </button>
+      <button type="secondary" (click)="deleteIssue()">
+        Delete
+      </button>
+      <button type="secondary">
+        Assign
+      </button>
+      <button type="secondary">
+        Wont Fix
+      </button>
+      <button type="secondary">
+        Accept
+      </button>
+      <button type="secondary">
+        WorkFlow
+      </button>
+    </section>
+
+
+
+    <section class="details-section">
+
+      <div class="details-container">
+        <div class="key">Type:</div>
+        <strong>{{ issueDetail.type }}</strong>
+        <div class="key">Priority</div>
+        <strong class="priority">{{ issueDetail.severity }}</strong>
+        <div class="key">Affects Version/s:</div>
+        <strong>None</strong>
+        <div class="key">Labels:</div>
+        <strong>None</strong>
+        <div class="key">Components:</div>
+        <strong>Webece</strong>
+        <div class="key">Story Points:</div>
+        <strong>6</strong>
+        <div class="key">Sprint:</div>
+        <strong></strong>
+      </div>
+
+      <div class="details-container">
+        <div class="key">Status: </div>
+        <strong>{{ issueDetail.status }}</strong>
+        <div class="key">Resolution:</div>
+        <strong>Unresolved</strong>
+        <div class="key">Fix Version's:</div>
+        <strong>None</strong>
+      </div>
+    </section>
+
+    <div class="details-container">
+      <div class="key">Assignee:</div>
+      <strong>{{ username }}</strong>
+      <div class="key">Votes:</div>
+      <strong>0</strong>
+      <div class="key">Watchers:</div>
+      <strong class="watching">1 Stop watching this issue</strong>
+      <div class="key">Created:</div>
+      <strong>{{ issueDetail.created_at.slice(0,10) }}</strong>
+      <div class="key">Updated:</div>
+      <strong>{{ issueDetail.updated_at.slice(0,10) }}</strong>
+    </div>
+
+    <section class="description-section">
+      <h3>Description</h3>
+      <p>{{ issueDetail.description }}</p>
+    </section>
+
+    <section class="description-section">
+      <h3>Agile</h3>
+      <p>View on Board</p>
+    </section>
+
+    <section>
+      <h3>Attachment</h3>
+
+      <div class="attachment-box">
+        <div class="attachment-text">
+          Drop files to attach, or <a href="">browse</a>
+        </div>
+      </div>
+
+    </section>
+
+      <section class="activity-section">
+        <h3>Activity</h3>
+        <ul>
+          <li>All</li>
+          <li active>Comments</li>
+          <li>Work Log</li>
+          <li>History</li>
+          <li>Activity</li>
+        </ul>
+        <div class="comments-desc">
+          There are no comments yet on this issue.
+        </div>
+        <button type="secondary">
+          Comment
+        </button>
+      </section>
+  </main>
+</div>

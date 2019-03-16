@@ -1,0 +1,17 @@
+<div class="card container" [routerLink]="['/issues', issueData.id]" (click)="sendAssignee()">
+    <div class="card-id" *ngIf="showAssignee">Id: {{ issueData.id }}</div>
+    <h3 *ngIf="!showAssignee">{{ issueData.title }}</h3>
+    <div class="card-date">{{ issueData.created_at }}</div>
+  <h3 *ngIf="showAssignee">{{ issueData.title }}</h3>
+  <p>
+    {{ issueData.description_part }}
+  </p>
+  <section class="assignee" *ngIf="showAssignee">
+    <strong>Assignee</strong>
+    <img src={{issueData.assignee.profile_image}}/>
+    <div class="details">  
+      <div>{{ issueData.assignee.username }}</div>
+      <div>{{ issueData.assignee.role }}</div>
+    </div>
+  </section>
+</div>

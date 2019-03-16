@@ -1,0 +1,80 @@
+// You can add global styles to this file, and also import other style files 
+
+html,
+body {
+  min-height: 100%;
+}
+
+.app-container {
+  display: grid;
+  grid-template-columns: 15% auto;
+  grid-template-rows: 100%;
+  height: 100%;
+}
+
+.card {
+  cursor: pointer;
+  padding: 1em;
+}
+
+input,
+select,
+textarea,
+.attachment {
+  border-radius: 2px;
+  height: 2.5em;
+  opacity: .4;
+  padding: .325em 1.5em;
+  width: 100%;
+}
+
+// sass-lint:disable no-vendor-prefixes
+select {
+  -webkit-appearance: none;
+  background: url('../assets/down-arrow.png') no-repeat right;
+  background-position-x: 96%;
+  background-size: 20px 20px;
+}
+
+// sass-lint:enable no-vendor-prefixes
+button {
+  border: 0;
+  border-radius: 4px;
+  padding: .5em 1em;
+}
+
+textarea {
+  ::placeholder {
+    font-style: italic;
+  }
+}
+
+.card-id {
+  font-size: .8em;
+}
+
+.card-date {
+  font-size: .7em;
+}
+
+h3 {
+  font-size: 1em;
+}
+
+hr {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.avatar {
+  border-radius: 50%;
+}

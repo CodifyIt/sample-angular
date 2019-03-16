@@ -1,0 +1,16 @@
+.app-container > main {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-rows: auto auto 1fr;
+  padding: .5em 2em;
+}
+
+.issues-list-section {
+  display: grid;
+  grid-gap: 2em;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.graph-section > img {
+  width: 100%;
+}

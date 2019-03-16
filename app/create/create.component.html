@@ -1,0 +1,103 @@
+<div class="app-container create-container">
+  <app-nav></app-nav>
+  <main>
+    <h1>Create</h1>
+    <form [formGroup]='createIssueForm' (ngSubmit)='addIssue()'>
+      <section class="title-container">
+        <label for="title"> Title:</label>
+        <textarea formControlName="title" class="title-text" placeholder="Text"></textarea>
+      </section>
+      <section>
+        <label>Type:</label>
+        <select formControlName="type">
+          <option value="Bug" >BUG</option>
+          <option value="Task" >TASK</option>
+        </select>
+      </section>
+      <section>
+        <label>Status:</label>
+        <select formControlName="status">
+          <option value="Open" >NEW</option>
+          <option value="In Progress" >IN PROGRESS</option>
+          <option value="Resolved" >DONE</option>
+        </select>
+      </section>
+      <section>
+        <label>Priority:</label>
+        <select formControlName="priority">
+          <option value="1">LOW</option>
+          <option value="2">MEDIUM</option>
+          <option value="3">HIGH</option>
+        </select>
+      </section>
+      <section>
+        <label>Resolution:</label>
+        <input type="text" >
+      </section>
+      <section>
+        <label>Affected Version/s:</label>
+        <input type="text" >
+      </section>
+      <section>
+        <label>Fix-Version:</label>
+        <select >
+          <option value="alpha">Alpha</option>
+          <option value="beta">Beta</option>
+        </select>
+      </section>
+
+      <section>
+        <label>Components/s:</label>
+        <input type="text" >
+      </section>
+
+      <section>
+        <label>Assignee:</label>
+        <select formControlName="assignee"  >
+          <!-- <option *ngFor="let assignee of developers" value={{ assignee.getID }}>{{ asignee.getName() }}</option> -->
+          <option *ngFor="let assignee of assignees" [ngValue]="assignee.id">{{ assignee.username }}</option>
+        </select>
+      </section>
+
+      <section>
+        <label>Labels:</label>
+        <input type="text" formControlName="labels">
+      </section>
+
+      <section>
+        <label>Project</label>
+        <select formControlName="project">
+          <option *ngFor="let project of projects" [value]="project.id">{{ project.name }}</option>
+        </select>
+      </section>
+
+      <section>
+        <label>Sprint:</label>
+        <input type="text" >
+      </section>
+
+      <section>
+        <label>Description:</label>
+        <input formControlName="description" type="text">
+      </section>
+
+
+      <section>
+        <label>Due Date:</label>
+        <input type="date" formControlName="due_date" >
+      </section>
+
+      <section>
+        <label>Attachment:</label>
+        <div class="attachment"> Drop file to attach or <a href="">browse</a></div>
+      </section>
+
+      <section class="submit-section" *ngIf="!storageService.storage">
+        <button type="submit" [disabled]="!createIssueForm.valid">Submit ></button>
+      </section>
+      <section class="submit-section" *ngIf="storageService.storage">
+        <button type="submit" [disabled]="!createIssueForm.valid">Update ></button>
+      </section>
+    </form>
+  </main>
+</div>

@@ -1,0 +1,39 @@
+<div class="app-container">
+  <app-nav></app-nav>
+  <main>
+    <section class="header">
+      <h1>Issues</h1>
+      <div class="dropdown">
+        <span>Filter</span>
+        <div class="dropdown-content">
+          <div class="further-dropdown" (click)="showResults('project')">
+            <span *ngIf="selectedProject">{{ selectedProject.name }}</span>
+            <span *ngIf="!selectedProject">Projects</span>
+            <select [(ngModel)]="selectedProject" class="further-dropdown-content" (click)="changeProject()">
+              <option *ngFor="let project of projects" [ngValue]="project" >{{ project.name }}</option>
+            </select>
+          </div>
+
+          <div class="further-dropdown" (click)="showResults('assignee')">
+              <span *ngIf="selectedAssignee">{{ selectedAssignee.username }}</span>
+              <span *ngIf="!selectedAssignee">Assignees</span>
+              <select [(ngModel)]="selectedAssignee" class="further-dropdown-content" (click)="changeAssignee()">
+                <option *ngFor="let assignee of assignees" [ngValue]="assignee">{{ assignee.username }}</option>
+              </select>
+            </div>
+        </div>
+      </div>
+    </section>
+    <section class="kanban-board">
+      <section class="paper">
+        <app-issues-list heading="Todo" showAssignee="true" [project]="selectedProject" [assignee]="selectedAsignee" [projectNotifier]="changedProject" [assigneeNotifier]="changedAssignee"></app-issues-list>
+      </section>
+      <section class="paper">
+        <app-issues-list heading="In Progress" showAssignee="true" [project]="selectedProject" [assignee]="selectedAsignee" [project]="selectedProject" [assignee]="selectedAsignee" [projectNotifier]="changedProject" [assigneeNotifier]="changedAssignee"></app-issues-list>
+      </section>
+      <section class="paper">
+        <app-issues-list heading="Done"  showAssignee="true" [project]="selectedProject" [assignee]="selectedAsignee" [project]="selectedProject" [assignee]="selectedAsignee" [projectNotifier]="changedProject" [assigneeNotifier]="changedAssignee"></app-issues-list>
+      </section>
+    </section>
+  </main>
+</div>

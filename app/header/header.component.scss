@@ -1,0 +1,33 @@
+header {
+  display: grid;
+  grid-template-columns: 15% auto 15%;
+  grid-template-rows: 100%;
+  height: 4em;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+img {
+  margin: auto;
+}
+
+.search-container {
+  align-items: center;
+  display: flex;
+}
+
+.search-container > input {
+  background: transparent;
+  border: 0;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.actions {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+}
